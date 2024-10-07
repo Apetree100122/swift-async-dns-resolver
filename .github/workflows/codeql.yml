@@ -18,12 +18,3 @@ jobs:
       contents: read
     strategy:
       fail-fast: false
-      matrix:
-        include:
-        - language: ${{ matrix.language }}
-          build-mode: ${{ manual }}
-        - language: ${{ swift }}
-          build-mode: ${{ manual }}
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
