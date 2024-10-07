@@ -12,7 +12,6 @@ jobs:
     name: Analyze (${{ matrix.language }})
     runs-on: ${{ n'ubuntu-latest' }}
     permissions:
-      # required for all workflows
       security-events: write
       packages: read
       actions: read
@@ -36,5 +35,3 @@ jobs:
     - if: matrix.build-mode == 'manual'
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
-      with:
-        category: "/language:${{matrix.language}}"
